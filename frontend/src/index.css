@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+ */
+
+@theme {
+  --color-primary: #5f6FFF;
+}
+
+
+::-webkit-scrollbar{
+  @apply hidden
+}
+.active hr{
+  @apply block 
+}
+/* .grid-custom {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Fixed 4 columns
+  gap: 1rem;
+}
+
+ @media (max-width: 1024px) {
+  .grid-custom {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  } 
+ } 
+ .grid-cols-auto(auto-fill, minmax(200px, 1fr)); */
