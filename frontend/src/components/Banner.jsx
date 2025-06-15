@@ -5,13 +5,13 @@ import { useNavigate } from "react-router-dom";
 const Banner = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex px-6 sm:px-10 md:px-14 lg:px-12 my-20 md:mx-32  bg-primary rounded-lg ">
-      <div className="py-12 flex flex-col mx-auto items-start   gap-5">
+    <div className="flex px-6 sm:px-10 md:px-10 lg:px-12 mx-5 md:mx-10 lg:mx-16  bg-primary rounded-lg ">
+      <div className="py-12 flex flex-col mx-auto items-start  gap-5">
         <div className="">
-          <p className="text-4xl text-white font-bold text-start ">
+          <p className="text-2xl md:text-4xl text-white font-bold text-start ">
             Book Appoinment
           </p>
-          <p className="text-4xl text-white font-bold text-start py-5">
+          <p className="text-2xl md:text-4xl text-white font-bold text-start py-3">
           
             with 100+ Trusted Doctors
           </p>

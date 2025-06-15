@@ -12,9 +12,10 @@ import MyProfile from './pages/MyProfile'
 import Appoinment from './pages/Appoinment'
 import Navbar from './components/Navbar'
 import SpecialityMenu from './components/SpecialityMenu';
+import Footer from './components/Footer';
 const App = () => {
   return (
-    <div className='mx-4 sm:mx[10%]'>
+    <div className='mx-7 sm:mx[10%]'>
       <Navbar/> 
      <Routes>
       <Route path='/' element={<Home/>}/>
@@ -28,6 +29,7 @@ const App = () => {
       <Route path='/appoinment/:Doc-id' element={<Appoinment/>}/>
       <Route path='#speciality' element = {<SpecialityMenu/>}/>
      </Routes>
+     <Footer/>
     </div>
   )
 }

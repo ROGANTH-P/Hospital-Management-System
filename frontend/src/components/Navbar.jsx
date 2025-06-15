@@ -7,8 +7,8 @@ const Navbar = () => {
 
   const [token, settoken] = useState(true);
   return (
-    <div className="flex items-center  justify-between text-sm py-4 mb-5 border-b border-b-gray-500">
-      <img
+    <div className="flex   mt-0 items-center mb-5  justify-between text-sm py-4 border-b border-b-gray-500">
+      <img onClick={() => (navigate('/'))}
         className="w-44 cursor-pointer mx-auto md:mx-0"
         src={assets.logo}
         alt=""
