@@ -20,9 +20,9 @@ const Footer = () => {
           <div className="flex flex-col pl-0 lg:pl-64  pt-0 pb-0 gap-6">
             <h1 className=" font-medium text-gray-700">COMPANY</h1>
             <div className="flex flex-col gap-2 font-light text-gray-700">
-              <h1 className="cursor-pointer" onClick={() =>{navigate('/'), scrollTo(0,0)}}>Home</h1>
+              <h1 className="cursor-pointer hover:font-normal " onClick={() =>{navigate('/'), scrollTo(0,0)}}>Home</h1>
               <h1>Contact us</h1>
-              <h1>About us</h1>
+              <h1 className="cursor-pointer hover:font-normal" onClick={() => {navigate('/about') , scrollTo(0,0)}}>About us</h1>
               <h1>Privacy policy</h1>
             </div>
           </div>
