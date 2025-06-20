@@ -6,12 +6,10 @@ import { AppContext } from "../context/AppContext";
 import { specialityData } from "../assets/assets";
 const Doctors = () => {
   const { speciality } = useParams();
-  const {specialityyData} = useParams();
   const [fliterDoc, setfilterDoc] = useState([]);
   const { doctors } = useContext(AppContext);
-
   const navigate = useNavigate();
-  const [activeIndex, setActiveIndex] = useState(null);
+
   /*
   Another possible way to filter the doctors data  
    const applyFilter = speciality
@@ -20,11 +18,12 @@ const Doctors = () => {
 */
   const applyFilter = () => {
     if (speciality) {
-      setfilterDoc(doctors.filter((doc) => doc.speciality === speciality));
+      setfilterDoc(doctors.filter((doc) => doc.speciality === speciality ));
     } else {
       setfilterDoc(doctors);
     }
   };
+        
 
   useEffect(() => {
     applyFilter();
@@ -34,8 +33,8 @@ const Doctors = () => {
   return (
     <div>
       <p className="font-medium text-gray-700">Browse through the doctors specialist.</p>
-      <div cl className="flex flex-col md:flex-row gap-10  mt-5">
-        <div className="  flex-col gap-2 inline-flex cursor-pointer">
+      <div cl className="flex flex-col text-center md:flex-row gap-10  mt-5">
+        <div className="  flex-col gap-2 inline-flex cursor-pointer ">
           <>
           {/*
             **Another method get the specialist name**
@@ -56,14 +55,14 @@ const Doctors = () => {
               </p>
             </Link>
           ))} */}</>
-
+          
           <p
             onClick={() =>
               speciality === "General physician"
                 ? navigate("/doctors")
                 : navigate("/doctors/General physician")
             }
-            className={` font-light px-2 py-1 text-gray-700 border rounded-md  border-gray-300 ${speciality === 'General physician' ? 'bg-indigo-100 text-black font-normal' : ''}  `}
+            className={` font-light px-2 py-1 text-gray-700 border rounded-md   border-gray-300 ${speciality === 'General physician' ? 'bg-indigo-100 text-black font-normal' : ''}  `}
           >
             General physician
           </p>
@@ -120,11 +119,12 @@ const Doctors = () => {
             Gastroenterologist
           </p>
         </div>
-        <div className="gap-5 m-3 mt-0 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+         <div className="w-full flex justify-center">
+        <div className="grid gap-5 m-3 mt-0 responsive-grid">
           {fliterDoc.map((item, index) => (
             <div
-              onClick={() => navigate(`/appoinments/${item._id}`)}
-              className="items-center border border-blue-200 rounded-xl hover:translate-y-[-10px] transition-all duration-500"
+              onClick={() => navigate(`/appoinment/${item._id}`)}
+              className="overflow-hidden items-center border cursor-pointer border-blue-200 rounded-xl hover:translate-y-[-10px] transition-all duration-500"
               key={index}
             >
               <img className="bg-blue-50" src={item.image} />
@@ -139,10 +139,12 @@ const Doctors = () => {
                 <p className="text-sm text-gray-700 font-normal">
                   {item.speciality}
                 </p>
+                {/* console.log(doctors._id); */}
+                
               </div>
             </div>
           ))}
-        </div>
+        </div></div>
       </div>
     </div>
   );
